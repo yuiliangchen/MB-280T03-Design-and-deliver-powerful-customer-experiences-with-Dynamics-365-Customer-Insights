@@ -43,6 +43,7 @@ This lab is comprised of four tasks:
 6. While the upload window is open, add a logo tag to contosologo.png. (Start by typing logo into the text box below the image file name. After typing *logo*, select what you just typed. A tag will be added below the file name.)
 7. Select **Upload**. Ensure the image files uploaded - a green checkmark with Done will appear for each file. (It may take a few minutes for the files to upload.) Select **Close.**
 8. Using the Filter by keyword search box, enter *con* and press enter. By default, this filter searches by the file name. Verify that contosologo.png appears in the search results.
+<img width="1440" height="755" alt="Screenshot 2025-12-07 at 9 45 33 PM" src="https://github.com/user-attachments/assets/d3e21ffa-0225-4e1c-bffb-aa0278383d16" />
 
 These files will now be available for users to incorporate into their marketing operations.
 
@@ -53,17 +54,21 @@ These files will now be available for users to incorporate into their marketing 
    - Under Account Name, select **Bellows College**. You will then navigate to the Bellows College account record.
    - Scroll down to the **Contacts** subgrid. All Contacts associated with Bellows College are listed here. Click on the vertical ellipses at the top of the subgrid, click **Select,** and use the check boxes to select all the contacts in the list at once.
    - At the top of the Contacts subgrid, select the **vertical ellipses.** Then select **Edit.**
+<img width="1440" height="754" alt="Screenshot 2025-12-07 at 10 48 46 PM" src="https://github.com/user-attachments/assets/4c172742-d3a7-429d-a915-8e9d5825d551" />
    - On the Details tab, locate the Personal Notes field. Enter "Airpot owner" in the field. Select **Save.**
+<img width="1440" height="754" alt="Screenshot 2025-12-07 at 10 51 14 PM" src="https://github.com/user-attachments/assets/6e17c975-592e-4691-9ab8-1ba15940cf5d" />
    - Select one of the contacts other than Alva. Navigate to the **Details** tab. Verify “Airpot owner” appears in the Personal Notes field.
 4. Navigate back to the **Contacts** entity under the Audience group. 
 5. Set a filter on Company Name:
    - Select the **drop-down arrow** next to Company Name. Select **Filter by.** Choose **Equals** then select **Lucerne Publishing, Southridge Video,** and **Wingtip Toys.** (You can select the accounts by either selecting the name directly from the list, or by starting to type the name and selecting the Account name as it pops up.) Select **Apply.**
+<img width="1440" height="754" alt="Screenshot 2025-12-07 at 10 58 12 PM" src="https://github.com/user-attachments/assets/6463ceed-fe55-4490-976d-12a9718a9766" />
    - Select all contacts for those 3 accounts. (You can select the checkmark next to Full Name in the view header to select all the contacts at once.)
    - Select **Edit** in the command bar. Enter the following:
      - **Address 1: City:** Bellevue
      - **Address 1: State/Province:** Washington
      - **Details > Personal Notes:** Airpot owner
      - Select **Save.**
+<img width="1440" height="753" alt="Screenshot 2025-12-07 at 11 02 02 PM" src="https://github.com/user-attachments/assets/81990dc5-34be-443f-b031-cc53146d87a5" />
 6. Change the filter on Company Name:
    - Select the **drop-down arrow** next to Company Name. Select **Clear filter**.
    - Select the **drop-down arrow** again. Select **Filter by**. Select **Adatum Corporation** and **Northwind Traders**. Select **Apply.**
@@ -73,6 +78,7 @@ These files will now be available for users to incorporate into their marketing 
      - **Address 1: State/Province:** Washington
      - **Details > Personal Notes:** Airpot owner
      - Select **Save.**
+<img width="1440" height="755" alt="Screenshot 2025-12-07 at 11 05 40 PM" src="https://github.com/user-attachments/assets/106d9c9e-b93e-48d9-b097-59959d99e9fd" />
 7. Change the filter on Company Name:
    - Select the **drop-down arrow** next to Company Name. Select **Clear filters.**
    - Select the drop-down arrow again and select **Filter by**. Select **Trey Research**, **The Phone Company,** and **Wide World Importers.** Select **Apply.**
@@ -82,26 +88,32 @@ These files will now be available for users to incorporate into their marketing 
      - **Address 1: State/Province:** Washington
      - **Details > Personal Notes:** Airpot owner
      - Select **Save.**
+<img width="1440" height="753" alt="Screenshot 2025-12-07 at 11 08 32 PM" src="https://github.com/user-attachments/assets/e47dacc8-310b-421f-a5fc-3fc379c0c2c6" />
 
 ### Task 3: Create a task template
 1. Log into Dynamics 365 Customer Insights - Journeys with your admin credentials.
-2. Under the **Assets** group, navigate to **Task templates**.
-3. Select **+New**.
+2. Under the **Assets** group, navigate to **Templates**.
+3. Select **+New template** then select **Task**.
+<img width="1440" height="754" alt="Screenshot 2025-12-07 at 11 12 40 PM" src="https://github.com/user-attachments/assets/f295861b-44fb-49be-91eb-7f4a558c68d4" />
    - Name: Follow up with customer
    - Subject: Upgrade from Airpot to Airpot XL Smart Coffee Machine
    - Schedule type: Delay (in days).
    - Start delay: 0.
 4. In the Start time section, select **01** for Hour. Leave Minute blank.
-4. Select **Save & Close.**
+<img width="1440" height="754" alt="Screenshot 2025-12-07 at 11 16 28 PM" src="https://github.com/user-attachments/assets/3103f51c-5aea-4bc3-8124-0a303b9d8d0f" />
+5. Select **Save & Close.**
 
 ### Exercise 4: Configure the default brand profile
 1. Log into Dynamics 365 Customer Insights - Journeys. Change areas to the **Settings** area.
+<img width="1440" height="755" alt="Screenshot 2025-12-07 at 11 18 03 PM" src="https://github.com/user-attachments/assets/ad11f055-971d-4bb5-97c0-aa63f71168c9" />
 2. In the **Customer engagement** group, navigate to **Brand profiles**.
 3. Select the **Default brand profile.**
+<img width="1440" height="755" alt="Screenshot 2025-12-07 at 11 20 23 PM" src="https://github.com/user-attachments/assets/ede33a1f-058f-48f2-8f8a-48b5b4edaf05" />
 4. Navigate to the **Senders** tab. You should see the Default sender record in the sub-grid. 
 5. Select the Social links tab. Fill in the following:
     - LinkedIn URL: https://www.linkedin.com/company/contoso12345/about/
     - Twitter URL: https://twitter.com/ContosoInc
     - Facebook URL: https://www.facebook.com/Contoso-102137176602590/
 6. Select **Save & Close.**
+<img width="1440" height="755" alt="Screenshot 2025-12-07 at 11 23 18 PM" src="https://github.com/user-attachments/assets/6480d89b-44c0-479f-b4b7-6fe82596852a" />
 
