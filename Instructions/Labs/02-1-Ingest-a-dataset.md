@@ -55,17 +55,24 @@ In this lab, you will become familiar with ingesting data from multiple sources.
 ### Task 1 - Ingest Customer Data from eCommerce Platform
 1. Sign in to Customer Insights at http://home.ci.ai.dynamics.com and verify **Marketing Trial** is selected in the drop-down menu in the top right-hand corner.
 2. In Customer Insights, expand **Data** on the left navigation menu and select **Data sources.**
+<img width="1440" height="755" alt="Screenshot 2025-12-07 at 5 30 38 PM" src="https://github.com/user-attachments/assets/91f66f7f-9c96-48da-b1d4-aad649a39159" />
 3. Select **+Add a data source**. View the available methods of ingesting data. For this lab, choose Microsoft Power Query, name the source *eCommerce*, then select **Next.**
+<img width="1440" height="756" alt="Screenshot 2025-12-07 at 5 33 17 PM" src="https://github.com/user-attachments/assets/284b5ced-6675-4009-b2ee-071c149e9cc3" />
 4. You will be presented with a view of Power Query data sources that Customer Insights is able to ingest. Take note of the connector types available. Select the **Text/CSV** connector.
 5. Enter https://aka.ms/CI-ILT/Contacts for File path or URL and select **Next.** It may take a few moments for the data to upload.
+<img width="1440" height="755" alt="Screenshot 2025-12-07 at 5 38 02 PM" src="https://github.com/user-attachments/assets/59aedd39-1570-4789-9460-f4acc045cf9b" />
 6. You should now see the data from the source tabulated. Select **Transform data** to configure the data types and formats for the data you ingest.
+<img width="1440" height="755" alt="Screenshot 2025-12-07 at 5 40 33 PM" src="https://github.com/user-attachments/assets/540ff57b-e970-4769-a638-38cc61d594fd" />
 7. You will notice that the column heading has appeared in the first row of the data. To correct this, either select **Transform > Use first row as headers** from the Home tab or select the **Transform** tab and then **Use first row as headers.**
+<img width="1440" height="755" alt="Screenshot 2025-12-07 at 5 42 38 PM" src="https://github.com/user-attachments/assets/abcc388b-7cb7-4d70-b5be-ce7875cd74a0" />
 8. Because we have ingested data from a Text/CSV source, all columns are defaulted to a 'Text' Data Type. To successfully ingest and model the data, we can set the data type for non-text columns. To change the data type, select the ABC icon on each column heading. Update the data type for these columns:
    - **DateOfBirth:** Date
    - **CreatedOn:** Date
    - **Income:** Currency
+<img width="1440" height="756" alt="Screenshot 2025-12-07 at 5 44 39 PM" src="https://github.com/user-attachments/assets/c077a38a-edfe-4585-84e8-907387dbcbd7" />
 9. Verify the Name field on the Query settings pane is set to Contacts. Select **Next**. Select **Save.**
    - Congratulations. You have now successfully created your first data source with a data set! We'll continue importing the next data set in the next task.
+<img width="1440" height="755" alt="Screenshot 2025-12-07 at 6 45 14 PM" src="https://github.com/user-attachments/assets/d4c5ab3d-8a81-4da6-be6e-fc192c8a2c0e" />
 
 ## Task 2 - Ingest Online Purchase Data
 In this task, we will ingest Online Purchase data, representing purchases made via the Contoso Coffee website.
@@ -74,6 +81,7 @@ In this task, we will ingest Online Purchase data, representing purchases made v
 2. Under *Managed by me (1)*, select the **eCommerce** data set and select **Edit**. Select **Next.**
    - **Note:** If your data is still refreshing, you will need to wait for it to finish before editing. You can skip directly to Task 3, and then return to Task 2 after you have completed Tasks 3-5.
 3. You should be presented with the Power Query view of the eCommerce Contacts data that you ingested in Task 1. On the **Home** tab, select **Get data.**
+<img width="1440" height="756" alt="Screenshot 2025-12-07 at 6 48 01 PM" src="https://github.com/user-attachments/assets/b3ddfa60-b749-4348-ad02-3399d4009cf3" />
 4. You will be presented with a view of data source connectors that Customer Insights is able to ingest. Select the **Text/CSV Connector.**
 5. Enter https://aka.ms/CI-ILT/OnlinePurchases for File path or URL and select **Next**. Select **Create.**
 6. As before, select **Transform**, then **Use first row as headers.**
@@ -81,6 +89,7 @@ In this task, we will ingest Online Purchase data, representing purchases made v
    - **PurchasedOn:** Date
    - **TotalPrice:** Currency
 8. Name this query *Purchases* and select **Save.**
+<img width="1440" height="755" alt="Screenshot 2025-12-07 at 6 51 03 PM" src="https://github.com/user-attachments/assets/6b3efcf9-9b1c-4095-b333-b25a869ace32" />
 
 ## Task 3 - Ingest Customer Data from Loyalty Scheme
 1. In Customer Insights, expand **Data** on the left menu and select **Data sources.**
@@ -93,6 +102,7 @@ In this task, we will ingest Online Purchase data, representing purchases made v
    - **RewardPoints:** Whole number
    - **CreatedOn:** Date
 7. Rename this query to *Customers* in the Query settings pane and select **Next.**
+<img width="1440" height="754" alt="Screenshot 2025-12-07 at 7 07 29 PM" src="https://github.com/user-attachments/assets/fc141215-492c-43e9-9069-cb9a001fc7c6" />
 8. On the refresh screen, select **Save.**
 
 ## Task 4 - Ingest Customer Data from Point of Sale Purchases
@@ -106,6 +116,7 @@ In this task, we will ingest Online Purchase data, representing purchases made v
    - **TotalPrice:** Currency
    - **RewardPointsAdded:** Whole number
 7. In the **Name** field on the Query settings pane, rename the query to *Purchases.* Select **Next.**
+<img width="1440" height="755" alt="Screenshot 2025-12-07 at 7 00 32 PM" src="https://github.com/user-attachments/assets/80750ce5-272c-47b1-bd37-5d47875097a4" />
 8. On the data refresh screen, select **Save.**
 
 ## Task 5 - Ingest Customer Data from Website Reviews
@@ -118,4 +129,5 @@ In this task, we will ingest Online Purchase data, representing purchases made v
    - **ReviewRating:** Whole number
    - **ReviewDate:** Date
 7. In the **Name** field on the Query settings pane, rename the query to *Reviews.* Select **Next**.
+<img width="1440" height="755" alt="Screenshot 2025-12-07 at 7 03 03 PM" src="https://github.com/user-attachments/assets/c4fa0169-f2a5-474f-aed4-b3298d7f2e36" />
 8. On the Refresh settings screen, select **Save.**
