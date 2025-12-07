@@ -15,8 +15,14 @@ If you are being provided with a tenant as a part of an instructor-led training 
 ## Exercise 1: Get a Dynamics 365 Customer Insights trial
 ### Step 1: Dynamics 365 Customer Insights trial
 1. In a new browser tab, navigate to https://dynamics.microsoft.com/dynamics-365-free-trial. In the middle of the screen, you will see two buttons: one to see plans and pricing, the other to try for free. Select **Try for free.**
-2. Navigate to the Dynamics 365 Customer Insights box and select **Try for free**. Enter the provided M365 admin credential and select **Start your free trial.** (If prompted, leave region set to United States and enter 0123456789 for Phone number.) Select **Submit.**
-3. Select **Launch Trial.**
-4. On the welcome screen, select **Start Customer Insights - Data.** The Customer Insights - Data model-driven app will launch in a new tab. You now have both a Customer Insights - Journeys and a Customer Insights - Data trial environment.
-5. Enter *United States* for Country/region. Select **Continue.**
-6. Select **Start trial** from the notification banner. Wait for the trial to set up - it may take a few minutes. (If you get a pop-up that says *Getting started*, select **Not now.**)
+<img width="1440" height="834" alt="Screenshot 2025-12-07 at 4 50 03 PM" src="https://github.com/user-attachments/assets/d5193504-4350-480d-92a7-cd1320f1dd47" />
+   把網頁拉到最底下，點選紅色框框，把語言改成English(United States)
+<img width="1440" height="835" alt="Screenshot 2025-12-07 at 4 57 11 PM" src="https://github.com/user-attachments/assets/facff389-a8c3-4770-8fa9-fb2fac4ff3eb" />
+3. Navigate to the Dynamics 365 Customer Insights box and select **Try for free**. Enter the provided M365 admin credential and select **Start your free trial.** (If prompted, leave region set to United States and enter 0123456789 for Phone number.) Select **Submit.**
+<img width="1440" height="836" alt="Screenshot 2025-12-07 at 4 59 43 PM" src="https://github.com/user-attachments/assets/af7f63b8-38ec-4a14-bff1-9befe414842e" />
+4. Select **Launch Trial.**
+5. On the welcome screen, select **Start Customer Insights - Data.** The Customer Insights - Data model-driven app will launch in a new tab. You now have both a Customer Insights - Journeys and a Customer Insights - Data trial environment.
+<img width="1440" height="836" alt="Screenshot 2025-12-07 at 5 03 51 PM" src="https://github.com/user-attachments/assets/ffe25521-c6b0-42fc-87e3-f2d99645cce7" />
+6. Enter *United States* for Country/region. Select **Continue.**
+7. Select **Start trial** from the notification banner. Wait for the trial to set up - it may take a few minutes. (If you get a pop-up that says *Getting started*, select **Not now.**)
+<img width="1440" height="756" alt="Screenshot 2025-12-07 at 5 06 45 PM" src="https://github.com/user-attachments/assets/54c17fd4-24e8-4073-9730-8b188ddd8ef1" />
