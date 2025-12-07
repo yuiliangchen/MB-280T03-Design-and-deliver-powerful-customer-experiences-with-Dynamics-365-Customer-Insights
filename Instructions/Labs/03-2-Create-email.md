@@ -26,23 +26,29 @@ This lab comprises three exercises:
 1. Log into Dynamics 365 Customer Insights - Journeys. Ensure you are in the **Real-time journeys area.**
 2. Navigate to **Emails** under the Channels group.
 3. Click **+New** to create a new email.
+<img width="1440" height="754" alt="Screenshot 2025-12-07 at 11 27 20 PM" src="https://github.com/user-attachments/assets/8f5f1bfd-0365-4fe1-89a4-5bf1e56e120c" />
 4. From the template gallery, scroll down to the **Layouts** section. sSelect **1-2 column** and **Select.**
+<img width="1440" height="754" alt="Screenshot 2025-12-07 at 11 29 48 PM" src="https://github.com/user-attachments/assets/e4963b7f-a262-4524-91a8-879d8b530e63" />
 5. In the upper left corner, change the name of the email from *Email 1* to *Smart Machine Campaign Email.* (When you hover over **Email 1** in the upper left corner, you should be able to type into that text box.)
 6. Select the **From Name/Subject box** in the designer to display the Email header details.
    - Type the following in the Subject: “Finally, a coffee machine that gets me."
-   - Select **Contoso Coffee** as the sender (if it is not already). The From name and From email should populate and should be read-only.
+   - Select **Default brand sender** as the sender (if it is not already). The From name and From email should populate and should be read-only.
+<img width="1440" height="755" alt="Screenshot 2025-12-07 at 11 34 52 PM" src="https://github.com/user-attachments/assets/9297d69d-0b83-4141-b887-7881c933b188" />
 7. Locate the **Toolbox** menu on the far right, which will show up as a series of icons. Hovering over the icons will show you the name of each tab. Select the **Theme** tab, which looks like a paintbrush.
    - **Note:** The details in this section affect the entire email. If you add new text elements to the email, it will default to the font, size, and color listed here. You can then update those elements as needed.
    - Change the **Font family** to: Segoe UI.
    - Change the **body text color** to: #404040.
    - Change the **email background** to: #CCCCCC.
+<img width="1440" height="754" alt="Screenshot 2025-12-07 at 11 39 50 PM" src="https://github.com/user-attachments/assets/6fe41fab-d89d-4e13-baa6-340ec9c6735a" />
 8. In the email itself, find the first section and select it. An Edit layout tab will appear. Change the Section background color to a shade of gray.
+<img width="1440" height="754" alt="Screenshot 2025-12-07 at 11 44 07 PM" src="https://github.com/user-attachments/assets/079ea564-fda1-4f4f-acd9-bb354e726103" />
 
 ## Task 2: Update images
 In this task, we will update the logo.
 
 1. Select the image in the first section on the designer.
 2. On the right, click the placeholder image. Select **Replace image** then choose **Browse library.**
+<img width="1440" height="755" alt="Screenshot 2025-12-07 at 11 47 00 PM" src="https://github.com/user-attachments/assets/350d61b0-ec2d-4095-b56d-1a08489c4bdb" />
 3. Select the **Contoso logo** then click **Select.**
 4. Replace the Alt text with *Contoso logo*.
 5. Select the **Link to** to drop down, and then select **URL**. Enter *www.contoso.com.*
@@ -50,14 +56,17 @@ In this task, we will update the logo.
 7. Next, we will update the second image in the email. Select the image in the section below the logo.
 8. Select **Replace image** and **Browse library.**
 9. Select the **hero-page.jpg** image. Click **Select.**
+<img width="1440" height="754" alt="Screenshot 2025-12-07 at 11 54 16 PM" src="https://github.com/user-attachments/assets/053a8d3f-7a8e-46be-8c7d-84cab25b0847" />
 
 ## Task 3: Update a headline using personalization
 In this task, we will update a headline to reflect the recipient contact's first name.
 1. Navigate to the text section below the logo and select it.
 2. Put your cursor at the start of the header text then click **Personalization** in the toolbar at the top of the email. Select **First name** from the dropdown. Ensure **Contact** is selected and select **Choose.**
+<img width="1440" height="755" alt="Screenshot 2025-12-08 at 12 02 02 AM" src="https://github.com/user-attachments/assets/17f9ed72-5edd-4ef1-94af-bb6305e19bf9" />
 3. Add a comma and a space after {{Firstname}}.
 4. Change the placeholder text to: “We’ve got your coffee breaks covered.”
 5. Highlight the text, make it bold and change the font size to *26.*
+<img width="1440" height="755" alt="Screenshot 2025-12-08 at 12 07 39 AM" src="https://github.com/user-attachments/assets/655b13cb-9ff3-4ff7-a5b4-dd810e5f15f4" />
 6. Change “Customize your email...” to “The New Airpot XL Intelligent Coffee Machine is like having your own personal barista.”
 7. Highlight the text and change the font size to *18.*
 
@@ -77,10 +86,12 @@ In this task, we will update a headline to reflect the recipient contact's first
 ## Task 5: Save and test the email
 16. On the toolbar, click **Save.**
 17. Select **Preview and test.**
+<img width="1440" height="754" alt="Screenshot 2025-12-08 at 12 23 07 AM" src="https://github.com/user-attachments/assets/d7104f0d-5e74-4957-b29d-c1721a75cdcb" />
 18. Click **Edit sample data**. In the Preview personalization pane, enter the first name of a contact you created. Select the contact to watch the personalization change.
 19. Return to the **Preview and test** screen. Preview the email on all screen sizes.
 20. Click the **arrow** next to Check content. Run the **Accessibility checker** to see if there are any other issues within the email. Mitigate any other issues as you see fit.
 21. On the toolbar, click **Ready to send.**
+<img width="1440" height="755" alt="Screenshot 2025-12-08 at 12 26 58 AM" src="https://github.com/user-attachments/assets/a263412c-4c3a-4682-89d7-07e32e90e0b5" />
 
 ### Exercise 2: Create an email by copying an email
 
