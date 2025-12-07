@@ -32,6 +32,7 @@ Existing owners who did not click a link will get another email advertising the 
 7.  In **Choose a trigger**, search for and select **Email Link Clicked.**
 8.  In **Choose an email,** search for and select your **Smart Machine Campaign Email.**
 9.  Click **Create**.
+<img width="1440" height="755" alt="Screenshot 2025-12-08 at 12 49 58 AM" src="https://github.com/user-attachments/assets/f12d20db-6c8c-4051-9ac7-cb19bf74ec93" />
 
 ### Task 2: Configure the journey entry
 1. Navigate to the **journey settings** section, which will be expanded on the right side of the screen. The **Entry** section should be open.
@@ -40,42 +41,52 @@ Existing owners who did not click a link will get another email advertising the 
 4. In the **Time zone** section, choose your time zone.
 5. In **Start,** select today. Set the time to 15 minutes from now. (You can type directly into this field.)
 6. In **End,** select tomorrow.
+<img width="1440" height="754" alt="Screenshot 2025-12-08 at 12 56 08 AM" src="https://github.com/user-attachments/assets/efa7dcd7-d22b-4c06-906c-9df5f8e3b54c" />
 
 ### Task 3: Configure the journey goal
 1.  Navigate to the journey settings on the right, which will look like a list of icons. Hover over each icon to see the name of each tab. Select the **Goal** section.
 2.  In *The goal of this journey is*, select **Send a general notification.**
 3.  In *The goal is met when,* select **A person clicked on at least one link.**
 4.  In *The number of people needed,* enter *50.* Leave percent selected.
+<img width="1440" height="755" alt="Screenshot 2025-12-08 at 12 59 25 AM" src="https://github.com/user-attachments/assets/ea8a4179-d249-44d9-b78f-6709a0fd0fc7" />
 
 ### Task 4: Add an attribute branch
 1. In the journey designer, click the **plus icon (+)** under the **Email link clicked** tile.
 2. Select **Attribute branch** from the *Conditions* section.
+<img width="1440" height="754" alt="Screenshot 2025-12-08 at 1 02 12 AM" src="https://github.com/user-attachments/assets/c4b3e647-946e-4a60-b7c9-aefcdd24c511" />
 3. In **Display name** on the right, enter *Already owns airpot*
 4. Select **Branch 1**. In Display name, enter *Owns airpot.*
 5. Select **Add conditions.**
 6. In **Choose an attribute**, Search for **Description (description)** under Contact.
 7. Change the value from Equals to Contains.
 8. In **Value,** enter *Airpot.*
+<img width="1440" height="754" alt="Screenshot 2025-12-08 at 1 06 46 AM" src="https://github.com/user-attachments/assets/f030c039-3009-4764-91e4-c1b3c98cad1a" />
 9. Return to the journey designer. Click the **plus icon (+)** under Branch 1.
   - Select **Email**.
   - In **Select email,** choose **Upgrade Airpot Email.**
+<img width="1440" height="754" alt="Screenshot 2025-12-08 at 1 11 29 AM" src="https://github.com/user-attachments/assets/dc3dede8-c21b-4bf7-909f-28b2c508575e" />
 10.  Click the **plus icon (+)** under the Send an email tile.
   - Select **Wait for trigger.**
   - In **Choose a branch condition type**, select **The previous message gets an interaction.**
   - In **Choose an interaction**, select **Email Link Clicked.**
   - In **What’s the time limit?,** enter 10 minutes.
+<img width="1440" height="754" alt="Screenshot 2025-12-08 at 1 18 03 AM" src="https://github.com/user-attachments/assets/84caebc7-4964-4de9-a524-ebae626ab8f9" />
 11. In the **Yes** path, click the **plus icon (+).**
   - Select **Task** in the Activities section.
   - In Choose a template, select **Follow up with customer.**
   - Subject and Assign to will fill automatically.
   - Change **Due after** to *2 weeks.*
+<img width="1440" height="755" alt="Screenshot 2025-12-08 at 1 25 53 AM" src="https://github.com/user-attachments/assets/3bddb94b-f6e3-4ce0-b4b1-7ee3e4e4bfdb" />
 12. In the corresponding **No** path (below the Email Link Clicked If/then branch), click the **plus icon (+).**
   - Select **Send an email**.
   - In **Select email,** choose **Smart Machine Campaign Reminder.**
+<img width="1440" height="754" alt="Screenshot 2025-12-08 at 1 28 36 AM" src="https://github.com/user-attachments/assets/05790861-9bda-44c2-a15e-f490f6e648ea" />
 13. Return to the journey designer. Locate the **Attribute** tile. Now we will configure the **No** branch. For customers that do not already own an Airpot, we will send them the third email.
   - Select the **+** sign under **Other.**
   - Select **Email.**
   - Under Select Email, select **Smart Machine Campaign Reminder.**
+<img width="1440" height="754" alt="Screenshot 2025-12-08 at 1 31 06 AM" src="https://github.com/user-attachments/assets/b0c814eb-f488-4d96-b4e2-a466232a829a" />
 14. **Save** the journey.
 15. Review the journey. Make any final changes.
 16. Click **Publish**. Wait for the journey to publish.
+<img width="1440" height="754" alt="Screenshot 2025-12-08 at 1 42 45 AM" src="https://github.com/user-attachments/assets/f46747ca-edcd-4444-ad60-72e0a0fff6f8" />
