@@ -25,4 +25,4 @@ If you are being provided with a tenant as a part of an instructor-led training 
 <img width="1440" height="836" alt="Screenshot 2025-12-07 at 5 03 51 PM" src="https://github.com/user-attachments/assets/ffe25521-c6b0-42fc-87e3-f2d99645cce7" />
 6. Enter *United States* for Country/region. Select **Continue.**
 7. Select **Start trial** from the notification banner. Wait for the trial to set up - it may take a few minutes. (If you get a pop-up that says *Getting started*, select **Not now.**)
-<img width="1440" height="756" alt="Screenshot 2025-12-07 at 5 06 45 PM" src="https://github.com/user-attachments/assets/54c17fd4-24e8-4073-9730-8b188ddd8ef1" />
+<img width="1440" height="754" alt="Screenshot 2025-12-07 at 5 18 12 PM" src="https://github.com/user-attachments/assets/47b72313-c0da-41b9-96b7-cfc06298c01a" />
