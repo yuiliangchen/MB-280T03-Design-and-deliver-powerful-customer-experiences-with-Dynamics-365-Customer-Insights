@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Path 3: Manage customers and assets in Dynamics 365 Customer Insights - Journeys</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        
+<h1>Learning Path 3: Manage customers and assets in Dynamics 365 Customer Insights - Journeys</h1>
+
+<h2>Practice Lab 3.2: Create an email</h2>
+
+<h3>Lab Overview</h3>
+
+<p>#### Scenario</p>
+<p>For this campaign, the marketing team plans to do a large blitz around its newest smart coffee machine. They plan to send a three-email series. The first email will promote Contoso’s smart coffee machine. The second email is intended to encourage owners of the regular Airpot to upgrade to the new smart machine. The third email is a reminder about the new product launch.</p>
+
+<h3>Lab Overview</h3>
+<p>This lab comprises three exercises:</p>
+<ol>
+<li>In this exercise, you will create an email using an email template.</li>
+<li>In this exercise, you will create an email by copying another email.</li>
+<li>In this exercise, you will create an email by copying another email.</li>
+</ol>
+
+<h3>What you’ll need:</h3>
+<ul>
+<li>A computer with a Dynamics 365 Customer Insights - Journeys environment</li>
+</ul>
+
+<h2>Exercise 1: Create a marketing email</h2>
+<h3>Task 1: Create an email from a template</h3>
+<ol>
+<li>Log into Dynamics 365 Customer Insights - Journeys. Ensure you are in the <strong>Real-time journeys area.</strong></li>
+<li>Navigate to <strong>Emails</strong> under the Channels group.</li>
+<li>Click <strong>+New</strong> to create a new email.</li>
+</ol>
+<img width="1440" height="754" alt="Screenshot 2025-12-07 at 11 27 20 PM" src="images/Screenshot-2025-12-07-at-11-27-20-PM.png" />
+<ol>
+<li>From the template gallery, scroll down to the <strong>Layouts</strong> section. sSelect <strong>1-2 column</strong> and <strong>Select.</strong></li>
+</ol>
+<img width="1440" height="754" alt="Screenshot 2025-12-07 at 11 29 48 PM" src="images/Screenshot-2025-12-07-at-11-29-48-PM.png" />
+<ol>
+<li>In the upper left corner, change the name of the email from <em>Email 1</em> to <em>Smart Machine Campaign Email.</em> (When you hover over <strong>Email 1</strong> in the upper left corner, you should be able to type into that text box.)</li>
+<li>Select the <strong>From Name/Subject box</strong> in the designer to display the Email header details.</li>
+<li>Type the following in the Subject: “Finally, a coffee machine that gets me."</li>
+<li>Select <strong>Default brand sender</strong> as the sender (if it is not already). The From name and From email should populate and should be read-only.</li>
+</ol>
+<img width="1440" height="755" alt="Screenshot 2025-12-07 at 11 34 52 PM" src="images/Screenshot-2025-12-07-at-11-34-52-PM.png" />
+<ol>
+<li>Locate the <strong>Toolbox</strong> menu on the far right, which will show up as a series of icons. Hovering over the icons will show you the name of each tab. Select the <strong>Theme</strong> tab, which looks like a paintbrush.</li>
+<li><strong>Note:</strong> The details in this section affect the entire email. If you add new text elements to the email, it will default to the font, size, and color listed here. You can then update those elements as needed.</li>
+<li>Change the <strong>Font family</strong> to: Segoe UI.</li>
+<li>Change the <strong>body text color</strong> to: #404040.</li>
+<li>Change the <strong>email background</strong> to: #CCCCCC.</li>
+</ol>
+<img width="1440" height="754" alt="Screenshot 2025-12-07 at 11 39 50 PM" src="images/Screenshot-2025-12-07-at-11-39-50-PM.png" />
+<ol>
+<li>In the email itself, find the first section and select it. An Edit layout tab will appear. Change the Section background color to a shade of gray.</li>
+</ol>
+<img width="1440" height="754" alt="Screenshot 2025-12-07 at 11 44 07 PM" src="images/Screenshot-2025-12-07-at-11-44-07-PM.png" />
+
+<h2>Task 2: Update images</h2>
+<p>In this task, we will update the logo.</p>
+
+<ol>
+<li>Select the image in the first section on the designer.</li>
+<li>On the right, click the placeholder image. Select <strong>Replace image</strong> then choose <strong>Browse library.</strong></li>
+</ol>
+<img width="1440" height="755" alt="Screenshot 2025-12-07 at 11 47 00 PM" src="images/Screenshot-2025-12-07-at-11-47-00-PM.png" />
+<ol>
+<li>Select the <strong>Contoso logo</strong> then click <strong>Select.</strong></li>
+<li>Replace the Alt text with <em>Contoso logo</em>.</li>
+<li>Select the <strong>Link to</strong> to drop down, and then select <strong>URL</strong>. Enter <em>www.contoso.com.</em></li>
+<li>In the Size and alignment section, if Auto width is on, use the toggle to turn it off. Enter <em>150px</em> for the width. The other dimension will automatically update.</li>
+<li>Next, we will update the second image in the email. Select the image in the section below the logo.</li>
+<li>Select <strong>Replace image</strong> and <strong>Browse library.</strong></li>
+<li>Select the <strong>hero-page.jpg</strong> image. Click <strong>Select.</strong></li>
+</ol>
+<img width="1440" height="754" alt="Screenshot 2025-12-07 at 11 54 16 PM" src="images/Screenshot-2025-12-07-at-11-54-16-PM.png" />
+
+<h2>Task 3: Update a headline using personalization</h2>
+<p>In this task, we will update a headline to reflect the recipient contact's first name.</p>
+<ol>
+<li>Navigate to the text section below the logo and select it.</li>
+<li>Put your cursor at the start of the header text then click <strong>Personalization</strong> in the toolbar at the top of the email. Select <strong>First name</strong> from the dropdown. Ensure <strong>Contact</strong> is selected and select <strong>Choose.</strong></li>
+</ol>
+<img width="1440" height="755" alt="Screenshot 2025-12-08 at 12 02 02 AM" src="images/Screenshot-2025-12-08-at-12-02-02-AM.png" />
+<ol>
+<li>Add a comma and a space after {{Firstname}}.</li>
+<li>Change the placeholder text to: “We’ve got your coffee breaks covered.”</li>
+<li>Highlight the text, make it bold and change the font size to <em>26.</em></li>
+</ol>
+<img width="1440" height="755" alt="Screenshot 2025-12-08 at 12 07 39 AM" src="images/Screenshot-2025-12-08-at-12-07-39-AM.png" />
+<ol>
+<li>Change “Customize your email...” to “The New Airpot XL Intelligent Coffee Machine is like having your own personal barista.”</li>
+<li>Highlight the text and change the font size to <em>18.</em></li>
+</ol>
+
+<h2>Task 4: Design the rest of the email</h2>
+<ol>
+<li>Select the two-column section below the text. Change the Section background color to a shade of blue.</li>
+<li>In the left column, select the Image placeholder and click <strong>Replace image.</strong> Select <strong>Browse library</strong> and select <strong>coffee-machine.jpg.</strong> Click <strong>Select</strong>.</li>
+<li>Replace the Alt text with "Coffee Machine". (If the pane to edit the image doesn't immediately pop up, you can find the image properties as the bottom icon in the <strong>Toolbox</strong> menu.)</li>
+<li>In <strong>Link to</strong> field, select <strong>URL.</strong> Enter [https://dynamics.microsoft.com/].</li>
+<li>In the Size and alignment section, toggle Auto width <strong>off.</strong> Change the width to <em>150px</em> and let the other dimension set automatically.</li>
+<li>In the right column under the sub header, select the Image placeholder and click <strong>Replace image.</strong> Select <strong>Browse library</strong> and select <strong>barista.jpg</strong>. Click <strong>Select.</strong></li>
+<li>Replace the Alt text with <em>Barista.</em></li>
+<li>In Link to field, select URL. Enter [https://dynamics.microsoft.com/].</li>
+<li> Select the section with the social icons. Change the Section background color to a shade of gray.</li>
+<li>Select the section with the copyright information. Update the copyright from <em>2022 Company Inc.</em> to <em>2024 Contoso Coffee.</em></li>
+<li>Make any other changes as desired. Feel free to be creative and use any design experience you have. What do you find eye-catching when recieving a marketing email?</li>
+</ol>
+
+<h2>Task 5: Save and test the email</h2>
+<ol>
+<li>On the toolbar, click <strong>Save.</strong></li>
+<li>Select <strong>Preview and test.</strong></li>
+</ol>
+<img width="1440" height="754" alt="Screenshot 2025-12-08 at 12 23 07 AM" src="images/Screenshot-2025-12-08-at-12-23-07-AM.png" />
+<ol>
+<li>Click <strong>Edit sample data</strong>. In the Preview personalization pane, enter the first name of a contact you created. Select the contact to watch the personalization change.</li>
+<li>Return to the <strong>Preview and test</strong> screen. Preview the email on all screen sizes.</li>
+<li>Click the <strong>arrow</strong> next to Check content. Run the <strong>Accessibility checker</strong> to see if there are any other issues within the email. Mitigate any other issues as you see fit.</li>
+<li>On the toolbar, click <strong>Ready to send.</strong></li>
+</ol>
+<img width="1440" height="755" alt="Screenshot 2025-12-08 at 12 26 58 AM" src="images/Screenshot-2025-12-08-at-12-26-58-AM.png" />
+
+<h3>Exercise 2: Create an email by copying an email</h3>
+
+<h2>Task 1: Create an email to existing customers</h2>
+<ol>
+<li>Log into Dynamics 365 Customer Insights - Journeys. Ensure you are in the Real-time marketing area.</li>
+<li>Navigate to <strong>Emails</strong> under the Channels group.</li>
+<li>Open the email you created in Task 1.</li>
+<li>In the command bar, click the <strong>drop-down arrow</strong> next to Save. Choose <strong>Save as.</strong></li>
+<li>In the Quick Create menu on the right, name the email <em>Upgrade Airpot Email.</em></li>
+<li>In the Subject field, enter “Is it time for an upgrade?”</li>
+<li>Click <strong>Save and Close</strong>. A pop-up will appear that says <em>Your changes were saved</em>. Click <strong>View record</strong> to open the new email. (You can also navigate back to <strong>Emails</strong> and open <strong>Upgrade Airpot Email.</strong>)</li>
+<li>On the designer, change the header text to: “{{Firstname}}, coffee your way, at your fingertips.”</li>
+<li>Change the copy below the header to: “Your coffee order is as unique as you are. Time to try our new Airpot Smart Coffee Machine.”</li>
+<li>Select the next two-column section. Change the Layout from 2 to 1:2.</li>
+<li>In the left column, make the following updates:</li>
+<li>Remove the text.</li>
+<li>Remove the button.</li>
+<li>In the right column, make the following updates:</li>
+<li>Remove the image.</li>
+<li>Change the text to: “Half-caf Americano, or double shot latte? However you choose to fuel your day, Contoso Coffee has you covered.” ‎</li>
+<li>Change the font size to 16 and italicize.</li>
+<li>Update the button.</li>
+<li>Select the button.</li>
+<li>Change Link to to URL.</li>
+<li>Enter https://dynamics.microsoft.com/.</li>
+<li>Change the Button text to <em>EXPLORE THE NEW SMART MACHINE.</em></li>
+<li>Expand <strong>Size and alignment.</strong> Switch Fit to text to <strong>Off.</strong> Change the width to <em>200px.</em></li>
+<li>On the toolbar, click <strong>Save.</strong></li>
+<li>Preview the email.</li>
+<li>Click <strong>Check content</strong>. Correct any errors if needed.</li>
+<li>On the toolbar, click <strong>Ready to send.</strong></li>
+</ol>
+
+<h3>Task 2: Create a follow-up campaign email</h3>
+<ol>
+<li>Log into Dynamics 365 Customer Insights - Journeys. Ensure you are in the Real-time marketing area.</li>
+<li>Navigate to <strong>Emails</strong> under the Channels group.</li>
+<li>Open the email you created in Task 2.</li>
+<li>In the command bar, click the drop-down arrow next to <strong>Save</strong>. Choose <strong>Save as.</strong></li>
+<li>In the Quick Create menu on the right, name the email <em>Smart Machine Campaign Reminder.</em></li>
+<li>In the Subject field, enter “Have you seen the news?”</li>
+<li>Click <strong>Save and Close.</strong> A pop-up will appear at the upper right that says Your changes were saved. Click <strong>View record</strong> to open the new email. (You can also navigate to the Emails list and open <strong>Smart Machine Campaign Reminder</strong>.)</li>
+<li>Change the header text to: “The new Airpot Smart Machine: available this fall!”</li>
+<li>Change the copy below the header to: "Our new Airpot Smart Machine is a new way to make coffee. Learn more about the first-of-its-kind coffee machine today."</li>
+<li>Remove the two-column section.</li>
+<li>On the toolbar, click <strong>Save.</strong></li>
+<li>Preview the email.</li>
+<li>Click <strong>Check content</strong>. Correct any errors if needed.</li>
+<li>On the toolbar, click <strong>Ready to send.</strong></li>
+</ol>
+
+
+    </div>
+</body>
+</html>

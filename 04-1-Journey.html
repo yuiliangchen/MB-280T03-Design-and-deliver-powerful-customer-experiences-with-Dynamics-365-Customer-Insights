@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Path 4: Create journeys</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        
+<h1>Learning Path 4: Create journeys</h1>
+
+<h2>Practice Lab 4.1: Create a trigger-based journey </h2>
+
+<h3>Lab Overview</h3>
+
+<p>#### Scenario</p>
+<p>Now that we have created our 3 emails, it is time to create a journey to send the emails to our customers. We will send our first email to our customers to let them know about the upcoming Airpot Smart Machine Coffee Maker.</p>
+
+<p>Customers that engage with this email will then be split into two sections: customers who already own an old Airpot model, and customers who do not. For our existing Airpot owners, we will send an email encouraging them to upgrade. If they interact with a link on this email, we will have a salesperson reach out to them directly.</p>
+
+<p>Existing owners who did not click a link will get another email advertising the product. This email will also go out to non-Airpot owners.</p>
+
+
+<h3>What you’ll need:</h3>
+<ul>
+<li>A computer with a Dynamics 365 Customer Insights - Journeys environment</li>
+</ul>
+
+<h2>Exercise 1: Create a real-time journey</h2>
+
+<h3>Task 1: Create a journey</h3>
+<ol>
+<li> Log into Dynamics 365 Customer Insights - Journeys.</li>
+<li> Navigate to the <strong>Real-time journeys</strong> work area.</li>
+<li> Under <strong>Engagement</strong>, select <strong>Journeys.</strong></li>
+<li> Click <strong>+ New journey</strong> in the command bar. If you are prompted to use Copilot to create your journey, select <strong>Skip and create from blank.</strong></li>
+<li> In <strong>Name the journey</strong>, enter <em>Airpot Smart Machine Launch Campaign.</em></li>
+<li> In <strong>Choose journey type</strong>, select <strong>Trigger-based.</strong></li>
+<li> In <strong>Choose a trigger</strong>, search for and select <strong>Email Link Clicked.</strong></li>
+<li> In <strong>Choose an email,</strong> search for and select your <strong>Smart Machine Campaign Email.</strong></li>
+<li> Click <strong>Create</strong>.</li>
+</ol>
+<img width="1440" height="755" alt="Screenshot 2025-12-08 at 12 49 58 AM" src="images/Screenshot-2025-12-08-at-12-49-58-AM.png" />
+
+<h3>Task 2: Configure the journey entry</h3>
+<ol>
+<li>Navigate to the <strong>journey settings</strong> section, which will be expanded on the right side of the screen. The <strong>Entry</strong> section should be open.</li>
+<li>Leave <strong>Exclude by segments</strong> blank.</li>
+<li>In the <strong>Repeat</strong> section, select Immediately.</li>
+<li>In the <strong>Time zone</strong> section, choose your time zone.</li>
+<li>In <strong>Start,</strong> select today. Set the time to 15 minutes from now. (You can type directly into this field.)</li>
+<li>In <strong>End,</strong> select tomorrow.</li>
+</ol>
+<img width="1440" height="754" alt="Screenshot 2025-12-08 at 12 56 08 AM" src="images/Screenshot-2025-12-08-at-12-56-08-AM.png" />
+
+<h3>Task 3: Configure the journey goal</h3>
+<ol>
+<li> Navigate to the journey settings on the right, which will look like a list of icons. Hover over each icon to see the name of each tab. Select the <strong>Goal</strong> section.</li>
+<li> In <em>The goal of this journey is</em>, select <strong>Send a general notification.</strong></li>
+<li> In <em>The goal is met when,</em> select <strong>A person clicked on at least one link.</strong></li>
+<li> In <em>The number of people needed,</em> enter <em>50.</em> Leave percent selected.</li>
+</ol>
+<img width="1440" height="755" alt="Screenshot 2025-12-08 at 12 59 25 AM" src="images/Screenshot-2025-12-08-at-12-59-25-AM.png" />
+
+<h3>Task 4: Add an attribute branch</h3>
+<ol>
+<li>In the journey designer, click the <strong>plus icon (+)</strong> under the <strong>Email link clicked</strong> tile.</li>
+<li>Select <strong>Attribute branch</strong> from the <em>Conditions</em> section.</li>
+</ol>
+<img width="1440" height="754" alt="Screenshot 2025-12-08 at 1 02 12 AM" src="images/Screenshot-2025-12-08-at-1-02-12-AM.png" />
+<ol>
+<li>In <strong>Display name</strong> on the right, enter <em>Already owns airpot</em></li>
+<li>Select <strong>Branch 1</strong>. In Display name, enter <em>Owns airpot.</em></li>
+<li>Select <strong>Add conditions.</strong></li>
+<li>In <strong>Choose an attribute</strong>, Search for <strong>Description (description)</strong> under Contact.</li>
+<li>Change the value from Equals to Contains.</li>
+<li>In <strong>Value,</strong> enter <em>Airpot.</em></li>
+</ol>
+<img width="1440" height="754" alt="Screenshot 2025-12-08 at 1 06 46 AM" src="images/Screenshot-2025-12-08-at-1-06-46-AM.png" />
+<ol>
+<li>Return to the journey designer. Click the <strong>plus icon (+)</strong> under Branch 1.</li>
+<li>Select <strong>Email</strong>.</li>
+<li>In <strong>Select email,</strong> choose <strong>Upgrade Airpot Email.</strong></li>
+</ol>
+<img width="1440" height="754" alt="Screenshot 2025-12-08 at 1 11 29 AM" src="images/Screenshot-2025-12-08-at-1-11-29-AM.png" />
+<ol>
+<li> Click the <strong>plus icon (+)</strong> under the Send an email tile.</li>
+<li>Select <strong>Wait for trigger.</strong></li>
+<li>In <strong>Choose a branch condition type</strong>, select <strong>The previous message gets an interaction.</strong></li>
+<li>In <strong>Choose an interaction</strong>, select <strong>Email Link Clicked.</strong></li>
+<li>In <strong>What’s the time limit?,</strong> enter 10 minutes.</li>
+</ol>
+<img width="1440" height="754" alt="Screenshot 2025-12-08 at 1 18 03 AM" src="images/Screenshot-2025-12-08-at-1-18-03-AM.png" />
+<ol>
+<li>In the <strong>Yes</strong> path, click the <strong>plus icon (+).</strong></li>
+<li>Select <strong>Task</strong> in the Activities section.</li>
+<li>In Choose a template, select <strong>Follow up with customer.</strong></li>
+<li>Subject and Assign to will fill automatically.</li>
+<li>Change <strong>Due after</strong> to <em>2 weeks.</em></li>
+</ol>
+<img width="1440" height="755" alt="Screenshot 2025-12-08 at 1 25 53 AM" src="images/Screenshot-2025-12-08-at-1-25-53-AM.png" />
+<ol>
+<li>In the corresponding <strong>No</strong> path (below the Email Link Clicked If/then branch), click the <strong>plus icon (+).</strong></li>
+<li>Select <strong>Send an email</strong>.</li>
+<li>In <strong>Select email,</strong> choose <strong>Smart Machine Campaign Reminder.</strong></li>
+</ol>
+<img width="1440" height="754" alt="Screenshot 2025-12-08 at 1 28 36 AM" src="images/Screenshot-2025-12-08-at-1-28-36-AM.png" />
+<ol>
+<li>Return to the journey designer. Locate the <strong>Attribute</strong> tile. Now we will configure the <strong>No</strong> branch. For customers that do not already own an Airpot, we will send them the third email.</li>
+<li>Select the <strong>+</strong> sign under <strong>Other.</strong></li>
+<li>Select <strong>Email.</strong></li>
+<li>Under Select Email, select <strong>Smart Machine Campaign Reminder.</strong></li>
+</ol>
+<img width="1440" height="754" alt="Screenshot 2025-12-08 at 1 31 06 AM" src="images/Screenshot-2025-12-08-at-1-31-06-AM.png" />
+<ol>
+<li><strong>Save</strong> the journey.</li>
+<li>Review the journey. Make any final changes.</li>
+<li>Click <strong>Publish</strong>. Wait for the journey to publish.</li>
+</ol>
+<img width="1440" height="754" alt="Screenshot 2025-12-08 at 1 42 45 AM" src="images/Screenshot-2025-12-08-at-1-42-45-AM.png" />
+
+    </div>
+</body>
+</html>

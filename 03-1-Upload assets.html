@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 3: Manage customers and assets in Dynamics 365 Customer Insights - Journeys</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        
+<h1>Module 3: Manage customers and assets in Dynamics 365 Customer Insights - Journeys</h1>
+
+<h2>Lab 3.1: Upload assets</h2>
+
+<h3>Lab Overview</h3>
+
+<p>#### Scenario</p>
+<p>Contoso Coffee sells industrial-grade and personal coffee marchines to both coffee business owners who use Contoso coffee machines in their individual shops; businesses who have Contoso coffee machines in their corporate offices; and individual customers who use Contoso Coffee machines in their homes. This year, the company is releasing a brand new product called the Airpot XL Smart Coffee Machine. They plan to market this new product to both business and individuals.</p>
+
+<p>The marketing team decides to put together a cross-sell campaign to encourage current customers to consider upgrading to their new intelligent coffee machine. They plan to send a series of emails with a call to action for the customer to click a link that will trigger a phone call from a sales rep. They plan to run this campaign for 2 months.</p>
+
+
+<p>For this campaign, the Marketing Coordinator will need to:</p>
+<ul>
+<li>Upload marketing assets to use in the email campaigns.</li>
+<li>Build the marketing emails to send to customers.</li>
+<li>Build the journey that will automate the delivery of the campaign content.</li>
+</ul>
+
+<p>To get started, the Marketing Coordinator needs to upload the digital assets that will be used in the campaign. They also need to upload any new sales contacts the company has acquired recently and update details for existing contacts and accounts.</p>
+
+<h2>Lab Overview</h2>
+<p>This lab is comprised of four tasks:</p>
+<ol>
+<li>In the first task, you will upload image files to be used in marketing emails. These files will be uploaded to the real-time asset library.</li>
+<li>In the second task, you will update details for existing contacts within Dynamics 365 Customer Insights - Journeys.</li>
+<li>In the third task, you will create a task template that will be used in the journey.</li>
+<li>In the fourth task, you will configure the default brand profile to be used in your marketing assets (like emails).</li>
+</ol>
+
+<h3>What you’ll need:</h3>
+<ul>
+<li>A computer or VM with a Dynamics 365 Customer Insights - Journeys environment</li>
+<li>The image files to be used in marketing content. These can be found in your authorized lab host, or in the <strong>MB-280T03-Assets.zip</strong> file in the Instructions/Labs/Media folder in the GitHub repository. Ask your trainer if you have trouble finding them.</li>
+</ul>
+
+<h3>Exercise 1: Prepare marketing assets </h3>
+<h2>Task 1: Upload images to the asset library</h2>
+<ol>
+<li>Download the image files from the resource documents. Extract the files to a folder on your desktop.</li>
+<li>Log into Dynamics 365 Customer Insights - Journeys with your admin credentials.</li>
+<li>By default, you should be in the Real-time journeys area. Confirm that you are in the Real-time journeys area by opening the area selector in the bottom left of the screen.</li>
+<li>In the left menu, navigate to the Assets section. Select <strong>Library</strong>. Select the <strong>+ New</strong> button to open the upload files window.</li>
+<li>Select <strong>+ Add files</strong>, locate the image files on your local computer, and select them.</li>
+<li>While the upload window is open, add a logo tag to contosologo.png. (Start by typing logo into the text box below the image file name. After typing <em>logo</em>, select what you just typed. A tag will be added below the file name.)</li>
+<li>Select <strong>Upload</strong>. Ensure the image files uploaded - a green checkmark with Done will appear for each file. (It may take a few minutes for the files to upload.) Select <strong>Close.</strong></li>
+<li>Using the Filter by keyword search box, enter <em>con</em> and press enter. By default, this filter searches by the file name. Verify that contosologo.png appears in the search results.</li>
+</ol>
+<img width="1440" height="755" alt="Screenshot 2025-12-07 at 9 45 33 PM" src="images/Screenshot-2025-12-07-at-9-45-33-PM.png" />
+
+<p>These files will now be available for users to incorporate into their marketing operations.</p>
+
+<h3>Task 2: Update existing contacts</h3>
+<ol>
+<li>Log into Dynamics 365 Customer Insights - Journeys. Ensure that you are in the Real-time journeys area.</li>
+<li>From the left navigation, select <strong>Contacts</strong> under the Audience group.</li>
+<li>Open the contact <strong>Alva Tharaldsen.</strong></li>
+<li>Under Account Name, select <strong>Bellows College</strong>. You will then navigate to the Bellows College account record.</li>
+<li>Scroll down to the <strong>Contacts</strong> subgrid. All Contacts associated with Bellows College are listed here. Click on the vertical ellipses at the top of the subgrid, click <strong>Select,</strong> and use the check boxes to select all the contacts in the list at once.</li>
+<li>At the top of the Contacts subgrid, select the <strong>vertical ellipses.</strong> Then select <strong>Edit.</strong></li>
+</ol>
+<img width="1440" height="754" alt="Screenshot 2025-12-07 at 10 48 46 PM" src="images/Screenshot-2025-12-07-at-10-48-46-PM.png" />
+<ul>
+<li>On the Details tab, locate the Personal Notes field. Enter "Airpot owner" in the field. Select <strong>Save.</strong></li>
+</ul>
+<img width="1440" height="754" alt="Screenshot 2025-12-07 at 10 51 14 PM" src="images/Screenshot-2025-12-07-at-10-51-14-PM.png" />
+<ul>
+<li>Select one of the contacts other than Alva. Navigate to the <strong>Details</strong> tab. Verify “Airpot owner” appears in the Personal Notes field.</li>
+</ul>
+<ol>
+<li>Navigate back to the <strong>Contacts</strong> entity under the Audience group.</li>
+<li>Set a filter on Company Name:</li>
+<li>Select the <strong>drop-down arrow</strong> next to Company Name. Select <strong>Filter by.</strong> Choose <strong>Equals</strong> then select <strong>Lucerne Publishing, Southridge Video,</strong> and <strong>Wingtip Toys.</strong> (You can select the accounts by either selecting the name directly from the list, or by starting to type the name and selecting the Account name as it pops up.) Select <strong>Apply.</strong></li>
+</ol>
+<img width="1440" height="754" alt="Screenshot 2025-12-07 at 10 58 12 PM" src="images/Screenshot-2025-12-07-at-10-58-12-PM.png" />
+<ul>
+<li>Select all contacts for those 3 accounts. (You can select the checkmark next to Full Name in the view header to select all the contacts at once.)</li>
+<li>Select <strong>Edit</strong> in the command bar. Enter the following:</li>
+<li><strong>Address 1: City:</strong> Bellevue</li>
+<li><strong>Address 1: State/Province:</strong> Washington</li>
+<li><strong>Details > Personal Notes:</strong> Airpot owner</li>
+<li>Select <strong>Save.</strong></li>
+</ul>
+<img width="1440" height="753" alt="Screenshot 2025-12-07 at 11 02 02 PM" src="images/Screenshot-2025-12-07-at-11-02-02-PM.png" />
+<ol>
+<li>Change the filter on Company Name:</li>
+<li>Select the <strong>drop-down arrow</strong> next to Company Name. Select <strong>Clear filter</strong>.</li>
+<li>Select the <strong>drop-down arrow</strong> again. Select <strong>Filter by</strong>. Select <strong>Adatum Corporation</strong> and <strong>Northwind Traders</strong>. Select <strong>Apply.</strong></li>
+<li>Select all contacts for those 2 accounts.</li>
+<li>Select <strong>Edit</strong> in the command bar. Enter the following:</li>
+<li><strong>Address 1: City:</strong> Redmond</li>
+<li><strong>Address 1: State/Province:</strong> Washington</li>
+<li><strong>Details > Personal Notes:</strong> Airpot owner</li>
+<li>Select <strong>Save.</strong></li>
+</ol>
+<img width="1440" height="755" alt="Screenshot 2025-12-07 at 11 05 40 PM" src="images/Screenshot-2025-12-07-at-11-05-40-PM.png" />
+<ol>
+<li>Change the filter on Company Name:</li>
+<li>Select the <strong>drop-down arrow</strong> next to Company Name. Select <strong>Clear filters.</strong></li>
+<li>Select the drop-down arrow again and select <strong>Filter by</strong>. Select <strong>Trey Research</strong>, <strong>The Phone Company,</strong> and <strong>Wide World Importers.</strong> Select <strong>Apply.</strong></li>
+<li>Select all contacts for those 3 accounts.</li>
+<li>Select Edit in the command bar. Enter the following:</li>
+<li><strong>Address 1: City:</strong> Seattle</li>
+<li><strong>Address 1: State/Province:</strong> Washington</li>
+<li><strong>Details > Personal Notes:</strong> Airpot owner</li>
+<li>Select <strong>Save.</strong></li>
+</ol>
+<img width="1440" height="753" alt="Screenshot 2025-12-07 at 11 08 32 PM" src="images/Screenshot-2025-12-07-at-11-08-32-PM.png" />
+
+<h3>Task 3: Create a task template</h3>
+<ol>
+<li>Log into Dynamics 365 Customer Insights - Journeys with your admin credentials.</li>
+<li>Under the <strong>Assets</strong> group, navigate to <strong>Templates</strong>.</li>
+<li>Select <strong>+New template</strong> then select <strong>Task</strong>.</li>
+</ol>
+<img width="1440" height="754" alt="Screenshot 2025-12-07 at 11 12 40 PM" src="images/Screenshot-2025-12-07-at-11-12-40-PM.png" />
+<ul>
+<li>Name: Follow up with customer</li>
+<li>Subject: Upgrade from Airpot to Airpot XL Smart Coffee Machine</li>
+<li>Schedule type: Delay (in days).</li>
+<li>Start delay: 0.</li>
+</ul>
+<ol>
+<li>In the Start time section, select <strong>01</strong> for Hour. Leave Minute blank.</li>
+</ol>
+<img width="1440" height="754" alt="Screenshot 2025-12-07 at 11 16 28 PM" src="images/Screenshot-2025-12-07-at-11-16-28-PM.png" />
+<ol>
+<li>Select <strong>Save & Close.</strong></li>
+</ol>
+
+<h3>Exercise 4: Configure the default brand profile</h3>
+<ol>
+<li>Log into Dynamics 365 Customer Insights - Journeys. Change areas to the <strong>Settings</strong> area.</li>
+</ol>
+<img width="1440" height="755" alt="Screenshot 2025-12-07 at 11 18 03 PM" src="images/Screenshot-2025-12-07-at-11-18-03-PM.png" />
+<ol>
+<li>In the <strong>Customer engagement</strong> group, navigate to <strong>Brand profiles</strong>.</li>
+<li>Select the <strong>Default brand profile.</strong></li>
+</ol>
+<img width="1440" height="755" alt="Screenshot 2025-12-07 at 11 20 23 PM" src="images/Screenshot-2025-12-07-at-11-20-23-PM.png" />
+<ol>
+<li>Navigate to the <strong>Senders</strong> tab. You should see the Default sender record in the sub-grid.</li>
+<li>Select the Social links tab. Fill in the following:</li>
+<li>LinkedIn URL: https://www.linkedin.com/company/contoso12345/about/</li>
+<li>Twitter URL: https://twitter.com/ContosoInc</li>
+<li>Facebook URL: https://www.facebook.com/Contoso-102137176602590/</li>
+<li>Select <strong>Save & Close.</strong></li>
+</ol>
+<img width="1440" height="755" alt="Screenshot 2025-12-07 at 11 23 18 PM" src="images/Screenshot-2025-12-07-at-11-23-18-PM.png" />
+
+
+    </div>
+</body>
+</html>

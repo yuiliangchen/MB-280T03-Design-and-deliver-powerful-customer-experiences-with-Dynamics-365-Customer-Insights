@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 2.2: Create a unified customer profile</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        
+<h1>Lab 2.2: Create a unified customer profile</h1>
+
+<h2>Learning Path 2: Work with unified customer profiles in Dynamics 365 Customer Insights - Data</h2>
+
+<p>Having ingested the raw data from your data sources into entities, you will now begin the Map, Match, Merge process to create a single Unified Customer Profile by merging data from each customer profile source. To do this, you will first map your ingested entities against a standard model and select the Primary Key for each of your profiled entities. Following the completion of this, you will then create your Match Rule that will be used to match contacts from all customer entities. Finally, running the Merge process will create a single set of unique Customers having matched profiles from all customer entities using your match rules. Your objective is to find out how many unique customer profiles Contoso Retail has across various data sources.</p>
+
+<h2>Exercise 1 - Unify the data</h2>
+
+<h3>Task 1 - Map contacts to common data types</h3>
+<ol>
+<li>Sign into Customer Insights - Data at https://home.ci.ai.dynamics.com.</li>
+<li>On the left navigation menu, expand <strong>Data</strong> and select <strong>Unify.</strong></li>
+<li>In the Customer Data section, select <strong>Get started.</strong></li>
+</ol>
+<img width="1440" height="755" alt="Screenshot 2025-12-07 at 7 19 34 PM" src="images/Screenshot-2025-12-07-at-7-19-34-PM.png" />
+<ol>
+<li>On the <strong>Describe the customer data to be unified</strong> screen, select <strong>+ Get started.</strong></li>
+<li>Select the tables that will represent the customer profile. Those tables are:</li>
+<li>Contacts (eCommerce)</li>
+<li>Customers (Loyalty)</li>
+<li>Select <strong>Apply.</strong></li>
+</ol>
+<img width="1440" height="755" alt="Screenshot 2025-12-07 at 7 22 16 PM" src="images/Screenshot-2025-12-07-at-7-22-16-PM.png" />
+<ol>
+<li>You will now be presented with the mappings of your source table against standard model types. You can review the types in the table.</li>
+<li>You must choose a 'Primary Key' for each entity you have ingested. The primary key must be a unique reference. For eCommerce Contacts, select <strong>ContactId</strong> as the primary key.</li>
+<li>The eCommerce Contacts data contains a column named <strong>Email Subscriber</strong> which will be mapped to an incorrect type, Identity.Service.Email, because of the name. Open the drop-down for this column and select the empty option (nothing/blank). If we do not do this, then the default system behavior is to merge this field with the Email field which we do not want.</li>
+</ol>
+<img width="1440" height="755" alt="Screenshot 2025-12-07 at 7 27 58 PM" src="images/Screenshot-2025-12-07-at-7-27-58-PM.png" />
+<ol>
+<li>Select <strong>Customers</strong> under Tables and set <strong>LoyaltyId</strong> as the primary key.</li>
+<li>Select <strong>Save source columns</strong> in the top left-hand corner.</li>
+</ol>
+<img width="1440" height="755" alt="Screenshot 2025-12-07 at 7 31 21 PM" src="images/Screenshot-2025-12-07-at-7-31-21-PM.png" />
+<ol>
+<li>Select the <strong>Next</strong> button, and then select <strong>Next</strong> again to skip the duplicate checking and move on to the Matching rules step.</li>
+</ol>
+
+<h3>Task 2 - Specify Match Order</h3>
+<p>For the next stage, we must select the order in which to merge the profiles. You will be able to merge attributes to ensure that the unified profiles are complete as well as the priority of which sources to use for those attributes.</p>
+<ol>
+<li>You should select the most complete or accurate profile source as the Primary (first) source. Verify <strong>Contacts: eCommerce</strong> is the primary (first) source (or move it if it isn't already).</li>
+<li>Select the check mark to <strong>Include all records.</strong></li>
+<li>Verify that <strong>Customers: Loyalty</strong> is the second source in the list. Choose to <strong>Include all</strong> records.</li>
+</ol>
+<img width="1440" height="755" alt="Screenshot 2025-12-07 at 7 34 38 PM" src="images/Screenshot-2025-12-07-at-7-34-38-PM.png" />
+
+<h3>Task 3 - Create a Match Rule</h3>
+<p>In this task, you will create a simple rule used to match records together. Rules can consist of single (e.g. based on ID) or multiple conditions (e.g. FullName, PostCode, Date of Birth). For further details on Match Rules, please see Customer Insights documentation.</p>
+<ol>
+<li>There is a warning indicator on the <strong>Customers: Loyalty line</strong>. Select <strong>+ Add rule</strong> or select the <strong>+</strong> icon on the right.</li>
+<li>Add the first condition using FullName:</li>
+<li>For the Contacts: eCommerce table, select the <strong>FullName</strong> field.</li>
+<li>For the Customers: Loyalty table, select the <strong>FullName</strong> field.</li>
+<li>Leave the Normalize drop-down blank.</li>
+<li>Set the Precision Level to <strong>Basic</strong> using the drop-down field.</li>
+<li>Set the Precision Value to <strong>High</strong> using the slider.</li>
+<li>Enter the name <strong>FullName, Email</strong> for the rule.</li>
+</ol>
+<img width="1440" height="755" alt="Screenshot 2025-12-07 at 7 57 31 PM" src="images/Screenshot-2025-12-07-at-7-57-31-PM.png" />
+<ol>
+<li>Add a second condition for email address by selecting <strong>+ Add</strong> and selecting <strong>Add condition.</strong></li>
+<li>For the Contacts: eCommerce table, select the <strong>EMail</strong> field.</li>
+<li>For the Customers: Loyalty table, select the <strong>EMail</strong> field.</li>
+<li>Leave the Normalize drop-down blank.</li>
+<li>Set the Precision Level to <strong>Basic.</strong></li>
+<li>Set the Precision Value to <strong>High.</strong></li>
+<li>Select <strong>Done.</strong></li>
+</ol>
+<img width="1440" height="755" alt="Screenshot 2025-12-07 at 8 01 28 PM" src="images/Screenshot-2025-12-07-at-8-01-28-PM.png" />
+<ol>
+<li>Select <strong>Next,</strong> select <strong>Next</strong> and select <strong>Create customer profiles.</strong></li>
+</ol>
+<img width="1440" height="757" alt="Screenshot 2025-12-07 at 8 04 05 PM" src="images/Screenshot-2025-12-07-at-8-04-05-PM.png" />
+
+<p>Customer Insights is now matching customer data from all your sources of customer information to identify how many unique customer profiles you would have based on your rules. Confer with the class: How many unique customers do you have when combining your datasets?</p>
+
+<h3>Task 4 - Precision</h3>
+<p>In Task 3, we used High Precision in the match-rule against Full Name. In this task, you will adjust the precision level to create a higher number of matches by including matches of a lower confidence (resulting in a lower number of unique profiles).</p>
+
+<strong>Notes on Precision:</strong>
+<ul>
+<li>Exact on the right-side of the scale will match records where your condition has an exact match. Select one of the other levels to match records that are not 100% identical.</li>
+<li>High fits cases where precision is more important than reach, such as a financial service to a specific customer.</li>
+<li>Low fits cases where the opposite is true, such as a marketing campaign.</li>
+<li>The Medium level serves as a middle-ground option.</li>
+</ul>
+
+<ol>
+<li>In Customer Insights, expand <strong>Data</strong> in the left-hand navigation menu. Select <strong>Unify.</strong></li>
+<li>Under Matching rules, select <strong>Edit.</strong></li>
+</ol>
+<img width="1440" height="756" alt="Screenshot 2025-12-07 at 8 22 18 PM" src="images/Screenshot-2025-12-07-at-8-22-18-PM.png" />
+<ol>
+<li>Expand the <strong>Customers: Loyalty</strong> rule and select the <strong>Edit</strong> button to open the <strong>FullName, Email</strong> conditions pane.</li>
+</ol>
+<img width="1440" height="756" alt="Screenshot 2025-12-07 at 8 24 40 PM" src="images/Screenshot-2025-12-07-at-8-24-40-PM.png" />
+<ol>
+<li>Under Condition 1, select <strong>Preview</strong> and note the values. Move the Precision slider for Condition 1 from <strong>High</strong> to <strong>Low</strong>. Select <strong>Done.</strong></li>
+</ol>
+<img width="1440" height="755" alt="Screenshot 2025-12-07 at 8 26 04 PM" src="images/Screenshot-2025-12-07-at-8-26-04-PM.png" />
+<img width="1440" height="756" alt="Screenshot 2025-12-07 at 8 28 10 PM" src="images/Screenshot-2025-12-07-at-8-28-10-PM.png" />
+<img width="1440" height="756" alt="Screenshot 2025-12-07 at 8 29 30 PM" src="images/Screenshot-2025-12-07-at-8-29-30-PM.png" />
+<ol>
+<li>Select <strong>Next</strong>, select <strong>Next</strong>, and select <strong>Create customer profiles.</strong></li>
+<li>Wait for the matching process to complete.</li>
+<li>Once the match process has completed, click <strong>Edit</strong> on matching rules. Select the <strong>vertical dots menu</strong> next to the <strong>FullName, Email</strong> rule and select <strong>Preview</strong> to see the match results and the Score. This shows how Customer Insights matched the data tables based on the rules you have defined. Some profiles have been created with a lower confidence of matching.</li>
+</ol>
+<img width="1440" height="756" alt="Screenshot 2025-12-07 at 8 51 25 PM" src="images/Screenshot-2025-12-07-at-8-51-25-PM.png" />
+<ol>
+<li>Close the preview and select Edit. Select the Preview button below Condition 1. Here you can preview the number of Unmatched and Matched records for the FullName condition.</li>
+</ol>
+<img width="1440" height="755" alt="Screenshot 2025-12-07 at 8 54 17 PM" src="images/Screenshot-2025-12-07-at-8-54-17-PM.png" />
+<ol>
+<li>Select <strong>Preview data</strong> under Unmatched or Matched to preview the matches. Notice how the high scores have exact spelling but can match even if the name format (First Name, Last Name / Last Name, First Name) is different. With the low scores, notice how matches are made even when names are not spelled identically.</li>
+<li>Close the Criteria preview pane and select <strong>Cancel.</strong></li>
+</ol>
+
+<p>Confer with the class: How many Unique Customer Profiles do you have now?</p>
+
+<h3>Task 5 - Unifying customer fields</h3>
+<p>This is the last phase in the data unification process. The purpose is to reconcile conflicting data and to define the attributes that will be used in the unified customer profile. A merged attribute is an attribute that exists in more than one data source and represents the same piece of data. For example, we may have ‘Email Address' in both eCommerce Customers and Loyalty Customer data sources. Customer Insights will attempt to identify the attributes to be merged to the standard data types we defined in the Source fields step.</p>
+
+<ol>
+<li>In Customer Insights, expand <strong>Data</strong> in the left-hand navigation menu. Select <strong>Unify.</strong></li>
+<li>Under Unified data view, select <strong>Edit.</strong></li>
+</ol>
+<img width="1440" height="756" alt="Screenshot 2025-12-07 at 8 58 16 PM" src="images/Screenshot-2025-12-07-at-8-58-16-PM.png" />
+<ol>
+<li>Under Customer columns, note how attributes from different data sources that are of the same type (e.g. FirstName) have been merged.</li>
+<li>Expand the <strong>FirstName</strong> merged attribute. You should see that the FirstName attribute in eCommerce: Contacts is ranked number 1. This denotes that where you have a matching customer profile in LoyaltyScheme and eCommerce, the FirstName taken from eCommerce: Contacts will be the primary.</li>
+<li>Select <strong>Next</strong> and select <strong>Create customer profiles.</strong></li>
+</ol>
+<img width="1440" height="756" alt="Screenshot 2025-12-07 at 9 00 47 PM" src="images/Screenshot-2025-12-07-at-9-00-47-PM.png" />
+<ol>
+<li>Wait for the process to finish.</li>
+</ol>
+
+<p>Congratulations! You have successfully ingested, mapped, matched, and unified data from multiple sources within Customer Insights to create a Unified Customer Profile that can be used to gain insights into your whole customer base.</p>
+
+<h2>Exercise 2 - Search for customers</h2>
+<p>In this exercise, we will set up Search and Filter criteria to enable Customer Insights users to search for unified customer profiles so that you can quickly pull information on a specific customer or group of customers.</p>
+
+<h3>Task 1 - Configure the Search Columns and Filter Index</h3>
+<ol>
+<li>In Customer Insights, select <strong>Customers</strong> from the left navigation menu.</li>
+<li>Select <strong>Search & filter index.</strong></li>
+</ol>
+<img width="1440" height="756" alt="Screenshot 2025-12-07 at 9 03 15 PM" src="images/Screenshot-2025-12-07-at-9-03-15-PM.png" />
+<ol>
+<li>Some customer search-specific fields are already added by default and you can add more by selecting <strong>+ Add</strong> from the toolbar.</li>
+<li>Make sure <strong>CustomerId, FirstName, LastName, FullName, DateOfBirth, EMail, PostCode, ContactId (eCommerce_Contacts),</strong> and <strong>LoyaltyId</strong> are selected. Deselect any other fields that are checked. Select <strong>Apply.</strong></li>
+</ol>
+<img width="1440" height="756" alt="Screenshot 2025-12-07 at 9 08 41 PM" src="images/Screenshot-2025-12-07-at-9-08-41-PM.png" />
+<ol>
+<li>Select <strong>Save.</strong></li>
+</ol>
+
+<h3>Task 2 - Search for a Customer Record</h3>
+<ol>
+<li>In Customer Insights, select <strong>Customers</strong> from the left navigation menu. You should be presented with a set of customer cards, representing the Unified Profiles. You can expand cards to see more about the customer or sort the cards by various fields. Try this by selecting <strong>Expand cards</strong> and <strong>Sort by</strong> on the toolbar.</li>
+<li>You can use Search customers to search for text attributes relating to unified customer profiles. (E.g. Searching '24502' will search against all text attributes and return matches and partial matches.)</li>
+</ol>
+<img width="1440" height="756" alt="Screenshot 2025-12-07 at 9 12 40 PM" src="images/Screenshot-2025-12-07-at-9-12-40-PM.png" />
+
+<p>Use the search bar to answer the following questions:</p>
+<ul>
+<li>What is Brian Gobble's Date of Birth? (Search for Brian Gobble)</li>
+<li>Which customer has Loyalty Card ID LOYID_5707? (Search for LOYID_5707)</li>
+<li>Which customer has a postcode of 24502? (Search for 24502)</li>
+</ul>
+
+    </div>
+</body>
+</html>
