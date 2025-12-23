@@ -1,0 +1,465 @@
+/* Story-Song Weaver 專用樣式 */
+
+.weaver-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 30px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+}
+
+.weaver-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.weaver-header h1 {
+    font-size: 3em;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+    border: none;
+    padding: 0;
+}
+
+.subtitle {
+    color: #666;
+    font-size: 1.2em;
+    margin: 0;
+}
+
+/* 區塊樣式 */
+section {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+section h2 {
+    color: #667eea;
+    margin-bottom: 25px;
+    font-size: 2em;
+    border-left: 5px solid #667eea;
+    padding-left: 15px;
+    border-bottom: none;
+}
+
+/* 表單樣式 */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* 按鈕樣式 */
+.btn-primary,
+.btn-secondary,
+.btn-interactive {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+    background: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #5a6268;
+    transform: translateY(-2px);
+}
+
+.btn-interactive {
+    background: #ffc107;
+    color: #333;
+}
+
+.btn-interactive:hover {
+    background: #ffb300;
+    transform: scale(1.05);
+}
+
+/* 歌詞顯示區域 */
+.lyric-display {
+    background: #f8f9fa;
+    border: 2px dashed #667eea;
+    border-radius: 10px;
+    padding: 25px;
+    margin-top: 20px;
+    min-height: 200px;
+    font-size: 1.2em;
+    line-height: 1.8;
+    color: #333;
+}
+
+.lyric-display .placeholder {
+    color: #999;
+    text-align: center;
+    font-style: italic;
+}
+
+/* 節奏控制 */
+.rhythm-controls {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.control-group label {
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #333;
+}
+
+.control-group input[type="range"] {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.control-group span {
+    font-weight: bold;
+    color: #667eea;
+}
+
+/* 節奏視覺化 */
+.rhythm-visualizer {
+    background: #1a1a1a;
+    border-radius: 10px;
+    padding: 30px;
+    margin-top: 20px;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.beat-indicator {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #667eea;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.7;
+    }
+}
+
+/* 回饋顯示 */
+.feedback-display {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.feedback-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    margin-bottom: 10px;
+    background: white;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+}
+
+.feedback-label {
+    font-weight: 600;
+    color: #333;
+}
+
+.feedback-value {
+    color: #667eea;
+    font-weight: bold;
+}
+
+/* 發音指導 */
+.pronunciation-guide {
+    background: #fff3cd;
+    border: 2px solid #ffc107;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.pronunciation-guide h3 {
+    color: #856404;
+    margin-bottom: 15px;
+}
+
+/* 監測儀表板 */
+.monitoring-dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.metric-card {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    border-left: 5px solid #667eea;
+}
+
+.metric-card h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 25px;
+    background: #e0e0e0;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    transition: width 0.5s ease;
+    border-radius: 12px;
+}
+
+.progress-text {
+    font-weight: bold;
+    color: #667eea;
+}
+
+.score-display {
+    font-size: 3em;
+    font-weight: bold;
+    color: #667eea;
+    text-align: center;
+    padding: 20px;
+}
+
+/* 學習路徑 */
+.learning-path {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.path-step {
+    flex: 1;
+    padding: 15px;
+    margin: 0 5px;
+    background: #e0e0e0;
+    border-radius: 8px;
+    text-align: center;
+    color: #666;
+    transition: all 0.3s ease;
+}
+
+.path-step.active {
+    background: #667eea;
+    color: white;
+    transform: scale(1.05);
+}
+
+.path-step.completed {
+    background: #28a745;
+    color: white;
+}
+
+/* 調整記錄 */
+.adjustment-log {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.adjustment-log h3 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.adjustment-log ul {
+    list-style: none;
+    padding: 0;
+}
+
+.adjustment-log li {
+    padding: 10px;
+    margin-bottom: 8px;
+    background: white;
+    border-radius: 5px;
+    border-left: 3px solid #667eea;
+}
+
+/* R2B 互動區域 */
+.r2b-display {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.r2b-character {
+    display: inline-block;
+    position: relative;
+    margin: 20px;
+}
+
+.r2b-face {
+    font-size: 8em;
+    margin-bottom: 20px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.r2b-lights {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.light {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #ccc;
+    animation: blink 1.5s infinite;
+}
+
+.light-1 {
+    animation-delay: 0s;
+}
+
+.light-2 {
+    animation-delay: 0.5s;
+}
+
+.light-3 {
+    animation-delay: 1s;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 1;
+        background: #667eea;
+    }
+}
+
+.r2b-status {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.interaction-controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .weaver-container {
+        padding: 15px;
+    }
+
+    .weaver-header h1 {
+        font-size: 2em;
+    }
+
+    .rhythm-controls {
+        grid-template-columns: 1fr;
+    }
+
+    .monitoring-dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .learning-path {
+        flex-direction: column;
+    }
+
+    .path-step {
+        margin: 5px 0;
+    }
+}
+

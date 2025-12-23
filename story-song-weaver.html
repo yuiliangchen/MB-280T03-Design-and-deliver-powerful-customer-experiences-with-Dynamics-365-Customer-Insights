@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>節奏與押韻夥伴（Rhythm & Rhyme Buddy, R2B）</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="weaver-styles.css">
+</head>
+<body>
+    <div class="weaver-container">
+        <!-- 標題區域 -->
+        <header class="weaver-header">
+            <h1>🎵 節奏與押韻夥伴</h1>
+            <p class="subtitle">Rhythm & Rhyme Buddy (R2B) - 個人化幼兒學習系統</p>
+        </header>
+
+        <!-- 使用者檔案區域 -->
+        <section class="user-profile-section" id="userProfileSection">
+            <h2>👤 使用者檔案</h2>
+            <div class="profile-form">
+                <div class="form-group">
+                    <label for="childName">幼兒姓名：</label>
+                    <input type="text" id="childName" placeholder="輸入幼兒姓名">
+                </div>
+                <div class="form-group">
+                    <label for="learningGoals">學習目標：</label>
+                    <textarea id="learningGoals" placeholder="例如：學習拼音、認識數字、日常步驟等"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="specificContent">特定內容（拼音、常用字、數字、步驟）：</label>
+                    <input type="text" id="specificContent" placeholder="例如：ㄅㄆㄇ、1-10、洗手步驟">
+                </div>
+                <div class="form-group">
+                    <label for="cognitiveLevel">認知發展階段：</label>
+                    <select id="cognitiveLevel">
+                        <option value="beginner">初級</option>
+                        <option value="intermediate">中級</option>
+                        <option value="advanced">高級</option>
+                    </select>
+                </div>
+                <button class="btn-primary" onclick="saveUserProfile()">儲存檔案</button>
+            </div>
+        </section>
+
+        <!-- 故事歌詞編織器模組 -->
+        <section class="lyric-generator-section" id="lyricGeneratorSection">
+            <h2>📝 故事歌詞編織器（Story-Song Weaver）</h2>
+            <div class="generator-controls">
+                <div class="form-group">
+                    <label for="lyricTheme">歌詞主題：</label>
+                    <input type="text" id="lyricTheme" placeholder="例如：動物、顏色、季節">
+                </div>
+                <div class="form-group">
+                    <label for="lyricDifficulty">難度等級：</label>
+                    <select id="lyricDifficulty">
+                        <option value="easy">簡單</option>
+                        <option value="medium">中等</option>
+                        <option value="hard">困難</option>
+                    </select>
+                </div>
+                <button class="btn-primary" onclick="generateLyrics()">生成歌詞</button>
+            </div>
+            <div class="lyric-display" id="lyricDisplay">
+                <p class="placeholder">點擊「生成歌詞」開始創作個人化歌詞</p>
+            </div>
+        </section>
+
+        <!-- 節奏共鳴模組 -->
+        <section class="rhythm-section" id="rhythmSection">
+            <h2>🎶 節奏共鳴</h2>
+            <div class="rhythm-controls">
+                <div class="control-group">
+                    <label for="tempo">節奏速度：</label>
+                    <input type="range" id="tempo" min="60" max="180" value="120" oninput="updateTempo(this.value)">
+                    <span id="tempoValue">120 BPM</span>
+                </div>
+                <div class="control-group">
+                    <label for="focusLevel">專注度：</label>
+                    <select id="focusLevel" onchange="adjustRhythm()">
+                        <option value="low">低</option>
+                        <option value="medium" selected>中</option>
+                        <option value="high">高</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label for="learningProgress">學習進度：</label>
+                    <select id="learningProgress" onchange="adjustRhythm()">
+                        <option value="beginner">初學</option>
+                        <option value="intermediate" selected>進階</option>
+                        <option value="advanced">熟練</option>
+                    </select>
+                </div>
+                <button class="btn-secondary" onclick="playMusic()">播放音樂</button>
+                <button class="btn-secondary" onclick="stopMusic()">停止</button>
+            </div>
+            <div class="rhythm-visualizer" id="rhythmVisualizer">
+                <div class="beat-indicator"></div>
+            </div>
+        </section>
+
+        <!-- 和聲助手模組 -->
+        <section class="harmony-section" id="harmonySection">
+            <h2>🎤 和聲助手</h2>
+            <div class="harmony-controls">
+                <button class="btn-primary" id="recordBtn" onclick="startRecording()">開始錄音</button>
+                <button class="btn-secondary" id="stopBtn" onclick="stopRecording()" disabled>停止錄音</button>
+                <button class="btn-secondary" onclick="analyzePronunciation()">分析發音</button>
+            </div>
+            <div class="feedback-display" id="feedbackDisplay">
+                <div class="feedback-item">
+                    <span class="feedback-label">發音準確度：</span>
+                    <span class="feedback-value" id="pronunciationScore">--</span>
+                </div>
+                <div class="feedback-item">
+                    <span class="feedback-label">押韻檢測：</span>
+                    <span class="feedback-value" id="rhymeScore">--</span>
+                </div>
+                <div class="feedback-item">
+                    <span class="feedback-label">鼓勵提示：</span>
+                    <span class="feedback-value" id="encouragementText">準備開始錄音...</span>
+                </div>
+            </div>
+            <div class="pronunciation-guide" id="pronunciationGuide">
+                <h3>發音指導</h3>
+                <div id="guideContent">等待錄音開始...</div>
+            </div>
+        </section>
+
+        <!-- 即時監測系統 -->
+        <section class="monitoring-section" id="monitoringSection">
+            <h2>📊 即時監測系統</h2>
+            <div class="monitoring-dashboard">
+                <div class="metric-card">
+                    <h3>學習進度</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="learningProgressBar" style="width: 0%"></div>
+                    </div>
+                    <span class="progress-text" id="learningProgressText">0%</span>
+                </div>
+                <div class="metric-card">
+                    <h3>專注度</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="focusProgressBar" style="width: 50%"></div>
+                    </div>
+                    <span class="progress-text" id="focusProgressText">50%</span>
+                </div>
+                <div class="metric-card">
+                    <h3>表現評分</h3>
+                    <div class="score-display" id="performanceScore">--</div>
+                </div>
+                <div class="metric-card">
+                    <h3>學習路徑</h3>
+                    <div class="learning-path" id="learningPath">
+                        <div class="path-step active">基礎學習</div>
+                        <div class="path-step">進階練習</div>
+                        <div class="path-step">熟練應用</div>
+                    </div>
+                </div>
+            </div>
+            <div class="adjustment-log" id="adjustmentLog">
+                <h3>動態調整記錄</h3>
+                <ul id="adjustmentList">
+                    <li>系統已啟動，等待開始學習...</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- R2B 互動區域 -->
+        <section class="r2b-interaction-section" id="r2bSection">
+            <h2>🤖 R2B 互動助手</h2>
+            <div class="r2b-display">
+                <div class="r2b-character" id="r2bCharacter">
+                    <div class="r2b-face">😊</div>
+                    <div class="r2b-lights">
+                        <span class="light light-1"></span>
+                        <span class="light light-2"></span>
+                        <span class="light light-3"></span>
+                    </div>
+                </div>
+                <div class="r2b-status">
+                    <p id="r2bStatus">R2B 準備就緒，等待互動...</p>
+                </div>
+            </div>
+            <div class="interaction-controls">
+                <button class="btn-interactive" onclick="triggerR2BInteraction('color')">顏色提示</button>
+                <button class="btn-interactive" onclick="triggerR2BInteraction('light')">燈光提示</button>
+                <button class="btn-interactive" onclick="triggerR2BInteraction('haptic')">觸覺回饋</button>
+            </div>
+        </section>
+    </div>
+
+    <script src="weaver-script.js"></script>
+</body>
+</html>
+
